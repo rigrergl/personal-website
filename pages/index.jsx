@@ -3,6 +3,7 @@ import styles from "../styles/Home.module.css";
 import { useState, useEffect } from "react";
 import Layout from "../components/Layout";
 
+
 export default function Home() {
   const [offsetY, setOffsetY] = useState(0);
   const handleScroll = () => setOffsetY(window.pageYOffset);
