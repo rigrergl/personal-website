@@ -1,6 +1,6 @@
-import Head from "next/head";
 import styles from "../styles/ParallaxDemo.module.scss";
 import { useState, useEffect } from "react";
+import Layout from "../components/Layout";
 
 export default function ParallaxDemo() {
   const [offsetY, setOffsetY] = useState(0);
@@ -34,16 +34,18 @@ export default function ParallaxDemo() {
   );
 
   return (
-    <section className={styles.Parallax}>
-    <div
-      className={styles.Parallax__background}
-      style={{ transform: `translateY(-${offsetY * 0.5}px)` }}
-    />
-    <div
-      className={styles.Parallax__background_triangles}
-      style={{ transform: `translateY(${offsetY * 0.8}px)` }}
-    />
-    <div className={styles.Parallax__content}>{renderContent()}</div>
-  </section>
+    <Layout>
+      <section className={styles.Parallax}>
+        <div
+          className={styles.Parallax__background}
+          style={{ transform: `translateY(-${offsetY * 0.5}px)` }}
+        />
+        <div
+          className={styles.Parallax__background_triangles}
+          style={{ transform: `translateY(${offsetY * 0.8}px)` }}
+        />
+        <div className={styles.Parallax__content}>{renderContent()}</div>
+      </section>
+    </Layout>
   );
 }
